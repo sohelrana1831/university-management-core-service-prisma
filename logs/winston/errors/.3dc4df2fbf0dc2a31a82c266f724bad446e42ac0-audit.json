@@ -1,0 +1,40 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "E:\\SR\\p-hero\\prisma\\university\\university-management-core-service-starter\\logs\\winston\\errors\\.3dc4df2fbf0dc2a31a82c266f724bad446e42ac0-audit.json",
+    "files": [
+        {
+            "date": 1692470568115,
+            "name": "E:\\SR\\p-hero\\prisma\\university\\university-management-core-service-starter\\logs\\winston\\errors\\phu-2023-20-08-00-error.log",
+            "hash": "3c378680a935c7cb3c1ad6efa52d5f50b0b924ad4dc103f7195194c10f57e43f"
+        },
+        {
+            "date": 1692473618956,
+            "name": "E:\\SR\\p-hero\\prisma\\university\\university-management-core-service-starter\\logs\\winston\\errors\\phu-2023-20-08-01-error.log",
+            "hash": "e9977f76dc7ea5ecbd1758d8c81f3f16e4a05c0eca924debb8173e3130a5481e"
+        },
+        {
+            "date": 1692475201463,
+            "name": "E:\\SR\\p-hero\\prisma\\university\\university-management-core-service-starter\\logs\\winston\\errors\\phu-2023-20-08-02-error.log",
+            "hash": "f8166c4a4927a59f9432c2b2c5c0199e1603c544ad00b27301a62c40546846c2"
+        },
+        {
+            "date": 1692554204083,
+            "name": "E:\\SR\\p-hero\\prisma\\university\\university-management-core-service-starter\\logs\\winston\\errors\\phu-2023-20-08-23-error.log",
+            "hash": "e3556e8cdfef0d66262afdbfe6fdba1909ab657df130e9017d28ce71d5bf6147"
+        },
+        {
+            "date": 1692554739524,
+            "name": "E:\\SR\\p-hero\\prisma\\university\\university-management-core-service-starter\\logs\\winston\\errors\\phu-2023-21-08-00-error.log",
+            "hash": "ce0802473caa5eafa886416f0e38f58a65f5ce3f940127f9a38e872e3821dfab"
+        },
+        {
+            "date": 1692558115772,
+            "name": "E:\\SR\\p-hero\\prisma\\university\\university-management-core-service-starter\\logs\\winston\\errors\\phu-2023-21-08-01-error.log",
+            "hash": "0bc133763496b85f0ed04a3261181e7a9c752c5cd3cf8edbe9b202d4120b1fcc"
+        }
+    ],
+    "hashType": "sha256"
+}

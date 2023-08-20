@@ -1,0 +1,100 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model AcademicSemester {
+  id         String  @id @default(uuid())
+  year       Int
+  title      String
+  code       String
+  startMonth String
+  endMonth   String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  student Student?
+
+  @@map("academic_semesters")
+}
+
+model AcademicFaculty {
+  id                  String               @id @default(uuid())
+  title               String
+  createAt            DateTime             @default(now())
+  updatedAt           DateTime             @updatedAt
+  academicDepartments AcademicDepartment[]
+  students             Student?
+  faculty             Faculty?
+
+  @@map("academic_faculty")
+}
+
+model AcademicDepartment {
+  id                String          @id @default(uuid())
+  title             String
+  createAt          DateTime        @default(now())
+  updatedAt         DateTime        @updatedAt
+  academicFaculty   AcademicFaculty @relation(fields: [academicFacultyId], references: [id])
+  academicFacultyId String          @unique
+
+  students Student?
+  faculty Faculty?
+
+  @@map("academic_department")
+}
+
+model Student {
+  studentId    String   @id @default(uuid())
+  firstName    String
+  lastName     String
+  middleName   String
+  profileImage String
+  email        String   @unique
+  contactNo    String   @unique
+  gender       String
+  bloodGroup   String
+  createAt     DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  academicSemesterId String           @unique
+  academicSemester   AcademicSemester @relation(fields: [academicSemesterId], references: [id])
+
+  academicDepartmentID String             @unique
+  academicDepartment   AcademicDepartment @relation(fields: [academicDepartmentID], references: [id])
+
+  academicFacultyId String          @unique
+  academicFaculty   AcademicFaculty @relation(fields: [academicFacultyId], references: [id])
+
+  @@map("students")
+}
+
+model Faculty {
+  facultyId    String   @id @default(uuid())
+  firstName    String
+  lastName     String
+  middleName   String
+  profileImage String
+  email        String   @unique
+  contactNo    String   @unique
+  gender       String
+  bloodGroup   String
+  designation  String
+  createAt     DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  academicDepartmentID String             @unique
+  academicDepartment   AcademicDepartment @relation(fields: [academicDepartmentID], references: [id])
+
+  academicFacultyId String          @unique
+  academicFaculty   AcademicFaculty @relation(fields: [academicFacultyId], references: [id])
+
+  @@map("faculties")
+}
